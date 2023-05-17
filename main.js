@@ -1,4 +1,3 @@
-//menjati brojeve od 0 do 2 naslovima kolnama
 var slucaj_1 = "";
 var slucaj_2 = "";
 var slucaj_3 = "";
@@ -33,21 +32,21 @@ function change3() {
 function change4() {
   document.getElementById("kolonab_2_polje_3").innerHTML = click;
 }
-//Kada pritisnemo na try it
+//When press on try it
 function chagenumbers() {
-  // x4 linija brisemo pametre koje smo postavili x ili 0
+  // Delete Parameters
   document.getElementById("kolonab_1_polje_2").innerHTML = "";
   document.getElementById("kolonab_1_polje_3").innerHTML = "";
   document.getElementById("kolonab_2_polje_2").innerHTML = "";
   document.getElementById("kolonab_2_polje_3").innerHTML = "";
-  //dobijamo slucajne brojeve
+  //Get random numbers
   document.getElementById("kolonab_1_polje_1").innerHTML = Math.floor(Math.random() * 3);
   document.getElementById("kolonab_2_polje_1").innerHTML = Math.floor(Math.random() * 3);
 
-  //Kada se dobiju novi brojevi vracamo vrednost redb1 redb2 na 0
+  // When new numbers are obtained, we return the redb1 redb2 value to 0
   redb1 = 0;
   redb2 = 0;
-  //posle try ita vracaju se boje na polja
+  //After try it back colors
   document.getElementById("kolonab_1_polje_2").style.backgroundColor = "rgb(245, 245, 220)";
   document.getElementById("kolonab_2_polje_2").style.backgroundColor = "rgb(245, 245, 220)";
   document.getElementById("kolonab_1_polje_3").style.backgroundColor = "rgb(245, 245, 220)";
@@ -57,39 +56,38 @@ function chagenumbers() {
   document.getElementById("kolonab_2_polje_2").style.border = "solid 1px silver";
   document.getElementById("kolonab_1_polje_3").style.border = "solid 1px silver";
   document.getElementById("kolonab_2_polje_3").style.border = "solid 1px silver";
-  //prvi slucaj
+  //First case
   if (document.getElementById("kolonab_1_polje_1").innerHTML == "1") {
-    //math funkcija opseg 0 do 1
     console.log("redb1 i redb2 je bio " + redb1 + " " + redb2);
     if (Math.floor(Math.random() * 2) == 1) {
-      // prvo polje ce biti x
-      // trece polje ce biti 0
-      // Prvo polje prvi broj drugo drugi...
+      // the first field will be x
+      // the third field will be 0
+
       comp[0] = "x";
       comp[2] = "0";
       redb1 = redb1 + 1;
     } else {
-      // prvo polje ce biti 0
-      // trece polje ce biti x
+      // the first field will be 0
+      // the third field will be x
       comp[0] = "0";
       comp[2] = "x";
       redb2 = redb2 + 1;
     }
     console.log("prvi slucaj sada je redb1 i redb2 " + redb1 + " " + redb2);
   }
-  //drugi slucaj
+  //Second case
 
   if (document.getElementById("kolonab_1_polje_1").innerHTML == "2") {
     console.log("redb1 i redb2 je bio " + redb1 + " " + redb2);
-    // prvo polje ce biti x
-    // trece polje ce biti x
+     // first field will be x
+     // the third field will be x
     comp[0] = "x";
     comp[2] = "x";
     redb1 = redb1 + 1;
     redb2 = redb2 + 1;
     console.log("drugi slucaj sada je redb1 i redb2 " + redb1 + " " + redb2);
   }
-  //treci slucaj
+  //third case
 
   if (document.getElementById("kolonab_2_polje_1").innerHTML == "1") {
 
@@ -97,24 +95,24 @@ function chagenumbers() {
     if (Math.floor(Math.random() * 2) == 1) {
       comp[1] = "x";
       comp[3] = "0";
-      // drugo polje ce biti x
-      // cetvrto polje ce biti 0
+      // second field will be x
+      // fourth field will be 0
       redb1 = redb1 + 1;
     } else {
       comp[1] = "0";
       comp[3] = "x";
-      // drugo polje ce biti 0
-      // cetvrto polje ce biti x
+      // second field will be 0
+      // fourth field will be x
       redb2 = redb2 + 1;
     }
     console.log("treci slucaj sada je redb1 i redb2 " + redb1 + " " + redb2);
   }
-  //cetvrti slucaj
+  //Fourth case
 
   if (document.getElementById("kolonab_2_polje_1").innerHTML == "2") {
     console.log("redb1 i redb2 je bio " + redb1 + " " + redb2);
-    // drugo polje ce biti x
-    // cetvrto polje ce biti x
+     // second field will be x
+     // the fourth field will be x
     comp[1] = "x";
     comp[3] = "x";
     redb1 = redb1 + 1;
@@ -128,22 +126,22 @@ function chagenumbers() {
   document.getElementById("redb_1_polje_1").innerHTML = redb1;
   document.getElementById("redb_2_polje_1").innerHTML = redb2;
 
-  //prvo polje
+  //first field
   if (document.getElementById("kolonab_1_polje_1").innerHTML == "0") {
     comp[0] = "0";
     comp[2] = "0";
   }
-  //drugo polje
+  //second field
   if (document.getElementById("kolonab_2_polje_1").innerHTML == "0") {
     comp[1] = "0";
     comp[3] = "0";
   }
-  //trece polje
+  //third field
   if (document.getElementById("redb_1_polje_1").innerHTML == "0") {
     comp[0] = "0";
     comp[1] = "0";
   }
-  //cetvrto polje
+  //fourth field
   if (document.getElementById("redb_2_polje_1").innerHTML == "0") {
     comp[2] = "0";
     comp[3] = "0";
@@ -153,14 +151,14 @@ function chagenumbers() {
 
 
 function check() {
-  //ova funcija ce proveravati tacnost koju je korisnik uneo odnosno pozicije x i o
-  //napraviti variable globalne 4 variable npr resenje_1 resenje_2 resenje_3 resenje_4 na pocetku ce biti 0
-  //u svakoj slucaju (4 slucaja) moras nekom od resenje da da vrednos.Vrednost moze biti x i 0
-  // znaci na kraju svaki od resenja mora biti 0 ili 1
-  // provera sta je korisnik uneo npr on je uneo u prvom slucaju x a x je 0 znaci da to poslje treba npr obojiti u crveno odnosno kosrisnik je pogresio
+    //this function will check the accuracy entered by the user, i.e. the x and o positions
+   //create global variables 4 variables eg solution_1 solution_2 solution_3 solution_4 will be 0 at the beginning
+   //in each case (4 cases) you have to give a value to one of the solutions. The value can be x and 0
+   // means at the end each of the solutions must be 0 or 1
+   // checking what the user entered, for example, he entered x in the first case and x is 0, which means that it should be colored red afterwards, i.e. the user made a mistake
 
 
-  //prvo polje je tacno
+  //first field true
   if (document.getElementById("kolonab_1_polje_2").innerHTML == comp[0]) {
 
     document.getElementById("kolonab_1_polje_2").style.backgroundColor = "green";
@@ -173,7 +171,7 @@ function check() {
 
   }
 
-  //drugo polje je tacno
+  //second field true
   if (document.getElementById("kolonab_2_polje_2").innerHTML == comp[1]) {
 
     document.getElementById("kolonab_2_polje_2").style.backgroundColor = "green";
@@ -185,7 +183,7 @@ function check() {
 
   }
 
-  //trece polje je tacno
+  //third field true
   if (document.getElementById("kolonab_1_polje_3").innerHTML == comp[2]) {
 
     document.getElementById("kolonab_1_polje_3").style.backgroundColor = "green";
@@ -197,7 +195,7 @@ function check() {
 
   }
 
-  //cetvrto polje je tacno
+  //fourth field true
   if (document.getElementById("kolonab_2_polje_3").innerHTML == comp[3]) {
 
     document.getElementById("kolonab_2_polje_3").style.backgroundColor = "green";
@@ -209,7 +207,7 @@ function check() {
 
   }
 
-    //resenja
+    //solutions
     alert("Prvo polje " + mistake[0]+
     "\nDrugo polje " + mistake[1] +
     "\nTrece polje " + mistake[2]+
